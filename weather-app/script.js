@@ -13,30 +13,41 @@ button.addEventListener('click', () => {
   checkWeather(input.value);
 });
 
+input.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    checkWeather(input.value);
+  }
+});
+
 async function checkWeather(searchCity) {
-  console.log(APIURL + `&q=${searchCity}` + `&appid=${APIKey}`);
   const response = await fetch(APIURL + `&q=${searchCity}` + `&appid=${APIKey}`);
   let data = await response.json();
-  console.log(data);
+  if (!data.name) {
+    input.value = '';
+    input.placeholder = 'Enter a valid city.';
+    document.querySelector('.weather').style.display = 'none';
+  }
   city.textContent = data.name;
   temp.textContent = `${Math.round(data.main.temp)}°C`;
   wind.textContent = `${data.wind.speed} km/h`;
   humidity.textContent = `${data.main.humidity}%`;
 
   const conditions = data.weather[0].main.toLowerCase();
-  if (conditions === 'clear') {
+  if (conditions == 'clear') {
     weatherIcon.src = './images/clear.png';
-  } else if (conditions === 'clouds') {
+  } else if (conditions == 'clouds') {
     weatherIcon.src = './images/clouds.png';
-  } else if (conditions === 'drizzle') {
+  } else if (conditions == 'drizzle') {
     weatherIcon.src = './images/drizzle.png';
-  } else if (conditions === 'mist') {
+  } else if (conditions == 'mist') {
     weatherIcon.src = './images/mist.png';
-  } else if (conditions === 'rain') {
+  } else if (conditions == 'rain') {
     weatherIcon.src = './images/rain.png';
-  } else if (conditions === 'snow') {
+  } else if (conditions == 'snow') {
     weatherIcon.src = './images/snow.png';
   }
+
+  document.querySelector('.weather').style.display = 'block';
 }
 // console.log(APIURL + `&appid=${APIKey}`);
 
