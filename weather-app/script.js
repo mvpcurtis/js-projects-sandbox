@@ -1,22 +1,35 @@
-// https://api.openweathermap.org/data/2.5/weather?id=london&appid=e19ae291c8d70950cbe443d46f3b9275&units=metric
-
 const APIKey = config.APIKey;
-const APIURL = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=London';
+let APICity = 'London';
+const APIURL = 'https://api.openweathermap.org/data/2.5/weather?units=metric';
 
-const city = document.querySelector('.city');
+let city = document.querySelector('.city');
 const wind = document.querySelector('.wind');
+const temp = document.querySelector('.temp');
+const humidity = document.querySelector('.humidity');
+const weatherIcon = document.querySelector('.weather-icon');
+const input = document.getElementById('input');
+const button = document.querySelector('button');
 
-// console.log(APIURL + `&appid=${APIKey}`);
+const capFirstLetter = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
+const searchCity = () => {
+  APICity = capFirstLetter(input.value);
+  console.log(APICity);
+  checkWeather();
+};
+
+button.addEventListener('click', searchCity);
 
 async function checkWeather() {
-  const response = await fetch(APIURL + `&appid=${APIKey}`);
-  var data = await response.json();
-
+  console.log(APIURL + `&q=${APICity}` + `&appid=${APIKey}`);
+  const response = await fetch(APIURL + `&q=${APICity}` + `&appid=${APIKey}`);
+  let data = await response.json();
   console.log(data);
-  city.textContent = data.name;
+  city.textContent = APICity;
+  temp.textContent = `${Math.round(data.main.temp)}°C`;
   wind.textContent = `${data.wind.speed} km/h`;
+  humidity.textContent = `${data.main.humidity}%`;
 }
-
-checkWeather();
-
-console.log(APIKey);
+// console.log(APIURL + `&appid=${APIKey}`);
