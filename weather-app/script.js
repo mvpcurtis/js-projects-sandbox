@@ -26,6 +26,9 @@ async function checkWeather(searchCity) {
     input.value = '';
     input.placeholder = 'Enter a valid city.';
     document.querySelector('.weather').style.display = 'none';
+    document.querySelector('.error').style.display = 'block';
+  } else {
+    document.querySelector('.error').style.display = 'none';
   }
   city.textContent = data.name;
   temp.textContent = `${Math.round(data.main.temp)}°C`;
