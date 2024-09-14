@@ -9,10 +9,10 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   background: #b92b27; /* fallback for old browsers */
-  background: -webkit-linear-gradient(right, #1565c0, #b92b27);
-  background: -moz-linear-gradient(right, #1565c0, #b92b27);
-  background: -o-linear-gradient(right, #1565c0, #b92b27);
-  background: linear-gradient(to left, #1565c0, #b92b27); /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(135deg, 439cfb, #f187fb);
+  background: -moz-linear-gradient(135deg, #439cfb, #f187fb);
+  background: -o-linear-gradient(135deg, #439cfb, #f187fb);
+  background: linear-gradient(135deg, #439cfb, #f187fb); /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,10 +21,86 @@ body {
 
 .card {
   background-color: #fefefe;
-  padding: 3em;
-  border-radius: 0.5em;
+  width: 100%;
+  max-width: 540px;
+  /* margin: 100px auto 20px; */
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+}
+
+.title {
+  color: #002765;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title img {
+  width: 30px;
+  margin-left: 10px;
 }
 
 .search {
   margin: 0.3em 0;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+.search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 10px;
+  font-weight: 14px;
+}
+
+.search button {
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background-color: #ff5945;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+ul li {
+  list-style-type: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+
+ul li::before {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-image: url(images/unchecked.png);
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
+}
+
+ul li.checked {
+  color: #555555;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  background-image: url(images/checked.png);
 }

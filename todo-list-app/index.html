@@ -8,12 +8,17 @@
   </head>
   <body>
     <div class="card">
-      <h3 class="title">To-do List</h3>
+      <h3 class="title">To-do List <img src="images/icon.png" /></h3>
       <div class="search">
-        <input type="text" name="search" id="search" />
-        <button>Submit</button>
+        <input type="text" name="search" id="search" placeholder="Add to your list!" />
+        <button>Add</button>
       </div>
-      <div class="list"></div>
+      <ul id="list-container">
+        <!-- <li class="checked">Task 1</li>
+        <li>Task 2</li>
+        <li>Task 3</li> -->
+      </ul>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
