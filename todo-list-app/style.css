@@ -40,11 +40,7 @@ body {
   margin-left: 10px;
 }
 
-.search {
-  margin: 0.3em 0;
-}
-
-.search {
+.todo-app {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,7 +50,7 @@ body {
   margin-bottom: 25px;
 }
 
-.search input {
+.todo-app input {
   flex: 1;
   border: none;
   outline: none;
@@ -63,7 +59,7 @@ body {
   font-weight: 14px;
 }
 
-.search button {
+.todo-app button {
   border: none;
   outline: none;
   padding: 16px 50px;
