@@ -1,0 +1,103 @@
+/* RESET */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* BODY */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 1rem;
+  font-weight: normal;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.07'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-rendering: optimizeLegibility;
+}
+
+.container {
+  margin: 0 auto;
+  width: 70%;
+  max-width: 840px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(203, 203, 203, 0.5);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: rgb(108, 108, 108);
+  padding: 1rem 1.5rem;
+  color: white;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: all ease-in-out 0.1s;
+}
+
+button:hover,
+button:focus {
+  background-color: rgb(150, 150, 150);
+}
+
+button:first-of-type {
+  background-color: rgb(29, 161, 242);
+}
+
+button:first-of-type:hover,
+button:first-of-type:focus {
+  background-color: rgb(107, 198, 255);
+}
+
+hr {
+  margin: 2rem 0;
+  background-color: rgb(108, 108, 108);
+  width: 100%;
+}

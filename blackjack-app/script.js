@@ -5,10 +5,21 @@ const randomNumber = function () {
   return Math.floor(Math.random() * (11 - 2) + 2);
 };
 
-const cards = [randomNumber(), randomNumber()];
+let cards = [randomNumber(), randomNumber()];
 let cardSum = 0;
 
+const newGame = function () {
+  document.querySelector('.ingame-buttons').style.display = 'none';
+  document.querySelector('#ingame').style.display = 'none';
+  document.querySelector('#start-game').style.display = 'block';
+  document.querySelector('h3').textContent = 'Black Jack Game';
+  cards = [randomNumber(), randomNumber()];
+  cardSum = 0;
+  document.querySelector('#start-game').addEventListener('click', startGame);
+};
+
 const newCard = function () {
+  cardSum = 0;
   const card = randomNumber();
   cards.push(card);
   renderGame();
@@ -21,7 +32,7 @@ const renderGame = function () {
     cardElement.textContent += ' ' + cards[i];
     cardSum += cards[i];
   }
-  sumElement.textContent += cardSum;
+  sumElement.textContent = 'Cards: ' + cardSum;
   if (cardSum < 21) {
     document.querySelector('h3').textContent = 'What would you like to do?';
   } else if (cardSum > 21) {
@@ -31,7 +42,6 @@ const renderGame = function () {
   }
 
   document.querySelector('#hit').addEventListener('click', newCard);
-  document.querySelector('#stay').addEventListener('click', checkComp);
   document.querySelector('#new-game').addEventListener('click', newGame);
 };
 

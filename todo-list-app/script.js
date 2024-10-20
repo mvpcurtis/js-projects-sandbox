@@ -13,4 +13,9 @@ function generateList(event) {
   }
 }
 
+function completeTodo {
+    
+}
+
+list.addEventListener('click', completeTodo);
 button.addEventListener('click', generateList);
