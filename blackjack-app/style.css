@@ -46,7 +46,8 @@ body > .container {
   font-size: 3rem;
 }
 
-.buttons {
+#ingame,
+.ingame-buttons {
   display: none;
 }
 
@@ -69,7 +70,7 @@ button:focus {
 
 p {
   margin-top: 1em;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 @media only screen and (max-width: 510px) {
@@ -82,7 +83,7 @@ p {
     font-size: 2.25rem;
   }
 
-  .buttons {
+  .ingame-buttons {
     width: 100%;
     display: flex;
     flex-direction: column;
