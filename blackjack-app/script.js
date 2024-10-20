@@ -8,6 +8,12 @@ const randomNumber = function () {
 const cards = [randomNumber(), randomNumber()];
 let cardSum = 0;
 
+const newCard = function () {
+  const card = randomNumber();
+  cards.push(card);
+  renderGame();
+};
+
 const renderGame = function () {
   cardElement.textContent = 'Cards: ';
   sumElement.textContent = 'Sum: ';
@@ -15,8 +21,18 @@ const renderGame = function () {
     cardElement.textContent += ' ' + cards[i];
     cardSum += cards[i];
   }
-
   sumElement.textContent += cardSum;
+  if (cardSum < 21) {
+    document.querySelector('h3').textContent = 'What would you like to do?';
+  } else if (cardSum > 21) {
+    document.querySelector('h3').textContent = "You've gone bust! Try again.";
+  } else {
+    document.querySelector('h3').textContent = "You've got black jack!";
+  }
+
+  document.querySelector('#hit').addEventListener('click', newCard);
+  document.querySelector('#stay').addEventListener('click', checkComp);
+  document.querySelector('#new-game').addEventListener('click', newGame);
 };
 
 const startGame = function () {
